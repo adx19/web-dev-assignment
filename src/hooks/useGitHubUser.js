@@ -1,14 +1,10 @@
-require('dotenv').config();
-
-const accessToken = process.env.GITHUB_ACCESS_TOKEN;
-
 export async function fetchData(username) {
   const url = `https://api.github.com/users/${username}`;
 
   try {
     const response = await fetch(url, {
       headers: {
-        'Authorization': `Bearer ${accessToken}`, // Add 'Bearer' here
+        'Authorization': `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`, // Add 'Bearer' here
         'Accept': 'application/vnd.github.v3+json'
       }
     });
@@ -30,7 +26,7 @@ export async function fetchRepoData(username) {
   try {
     const repoResponse = await fetch(repoUrl, {
       headers: {
-        'Authorization': `Bearer ${accessToken}`, // Add 'Bearer' here
+        'Authorization': `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`, // Add 'Bearer' here
         'Accept': 'application/vnd.github.v3+json'
       }
     });
